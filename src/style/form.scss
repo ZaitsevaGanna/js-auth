@@ -1,0 +1,62 @@
+@use './index.scss' as idx;
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: idx.space(3);
+
+    &_item{
+    display: flex;
+    flex-direction: column;
+    gap: idx.space(2);
+
+    }
+
+     &_error{
+    display: none;
+font-size: 12px;
+  color: idx.color(red);
+
+
+    &_active{
+        display: block;
+    }
+ }
+   
+}
+.button{
+    color:idx.color(white);
+    background: idx.color(main);
+    padding: idx.space(4) idx.space(8) ;
+    border-radius: 10px;
+
+    @include idx.click;
+
+    &:active{
+        opacity: 0.3;
+    }
+}
+
+.alert{
+    border:1px solid transparent;
+    border-radius: 10px;
+      padding: idx.space(3) idx.space(4) ;
+      font-size: 12px;
+
+       &_success{
+        border-color: idx.color(green);
+        color:idx.color(green);
+      }
+
+      &_error{
+        border-color: idx.color(red);
+        color:idx.color(red);
+      }
+
+       &_progress{
+        border-color: idx.color(blue);
+        color:idx.color(blue);
+      }
+
+
+}

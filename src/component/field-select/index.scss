@@ -1,0 +1,102 @@
+@use '../../style' as s;
+@use '../field/index.scss' as field;
+
+.field_select{
+  .field_select{
+    border: 1px solid s.color('box');
+    background: s.color('box');
+    padding: s.space(4);
+    border-radius: 10px;
+     display: flex;
+ align-items: center;
+    gap: s.space(2);
+  
+    
+    cursor: pointer;
+    transition: border-color 0.3s;
+
+    position: relative;
+  }
+
+.field_value{
+  font-size:14px;
+color:s.color(dark);
+
+&_placeholder{
+  color:s.color(light)
+}
+}
+
+.field_container{
+  display: grid;
+  position: relative;
+}
+.field_container:hover{
+ .field_select{
+  border-color: s.color(gray);
+ }
+}
+
+ .field_label_select{
+    font-size: 16px;
+    color: s.color('dark');
+
+  }
+
+.field_icon{
+  display: block;
+  height: 20px;
+  width: 20px;
+
+      background-image:  url('/svg/select-arrow.svg');
+      background-size: 12px 12px;
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      position: absolute;
+      right: s.space(4);
+      top: calc(50% - 10px);
+}
+
+.field_option_list{
+  padding: s.space(4);
+  display: none;
+  border: 1px solid s.color(box);
+  border-radius: 10px;
+  overflow: scroll;
+  background: s.color(background);
+  max-height: 160px;
+  z-index: 1;
+
+
+.field_option{
+  @include s.click();
+
+  &:not(:last-of-type){
+    padding-bottom: s.space(4);
+  }
+
+  transition: color 0.3s;
+
+  &[active]{
+    color: s.color(main);
+
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+
+&[active]{
+  display: block;
+
+position: absolute;
+top: 100%;
+right: 0px;
+width: 100%;}
+}
+
+// .field_input_disabled{
+//   display: none;
+// }
+}  

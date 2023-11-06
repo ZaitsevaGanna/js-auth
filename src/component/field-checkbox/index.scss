@@ -1,0 +1,54 @@
+@use '../../style' as s;
+@use '../field/index.scss' as field;
+
+
+.field_checkbox{
+  .field_wrapper{
+    border: 1px solid s.color('box');
+    padding: s.space(4);
+    border-radius: 10px;
+     display: flex;
+ align-items: center;
+    gap: s.space(2);
+    line-height: 1em;  
+    
+    cursor: pointer;
+    transition: border-color 0.3s;
+
+    &:hover{
+      border-color: s.color(grey);
+    }
+
+    &[active] .field_icon{
+        background-image:  url('/svg/checkbox-yes.svg');
+    }
+  }
+
+  .field_label_checkbox{
+    font-size: 16px;
+    color: s.color('dark');
+    padding-top: 3px;
+  }
+
+.field_icon{
+  display: block;
+  height: 14px;
+  width: 14px;
+
+      background-image:  url('/svg/checkbox-no.svg');
+      background-size: 12px 12px;
+      background-repeat: no-repeat;
+      background-position: center center;
+}
+
+}
+
+
+   
+ 
+  
+
+
+
+
+   

@@ -7,10 +7,14 @@ class User {
 
   static #list = []
 
+  static #count = 1
+
   constructor({ email, password, role }) {
+    this.id = User.#count++
     this.email = String(email).toLowerCase()
-    this.password = password
+    this.password = String(password)
     this.role = User.#convertRole(role)
+    this.isConfirm = false
   }
 
   static #convertRole = (role) => {
@@ -32,6 +36,7 @@ class User {
 
     this.#list.push(user)
     console.log(this.#list)
+    return user
   }
 
   static getByEmail(email) {
@@ -41,6 +46,23 @@ class User {
           user.email === String(email).toLowerCase(),
       ) || null
     )
+  }
+
+  static getList() {
+    return this.#list
+  }
+
+  static getRoleById(roleId) {
+    switch (roleId) {
+      case 0:
+        return 'Користувач'
+      case 1:
+        return 'Адміниістратор'
+      case 2:
+        return 'Розробник'
+      default:
+        return 'Хз хто!!!'
+    }
   }
 }
 

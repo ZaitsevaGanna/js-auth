@@ -4,6 +4,8 @@ import {
   REG_EXP_PASSWORD,
 } from '../../script/form'
 
+import { saveSession } from '../../script/session'
+
 class SignupForm extends Form {
   FIELD_NAME = {
     EMAIL: 'email',
@@ -25,6 +27,8 @@ class SignupForm extends Form {
   }
 
   validate = (name, value) => {
+    console.log(`INITIAL name: ${name} | value: ${value}`)
+
     if (String(value).length < 1) {
       return this.FIELD_ERROR.IS_EMPTY
     }
@@ -51,6 +55,9 @@ class SignupForm extends Form {
     }
 
     if (name === this.FIELD_NAME.ROLE) {
+      console.log(
+        `FIELD_NAME.ROLE name: ${name} | value: ${value}`,
+      )
       if (isNaN(value)) {
         return this.FIELD_ERROR.ROLE
       }
@@ -81,6 +88,8 @@ class SignupForm extends Form {
 
         if (res.ok) {
           this.setAlert('success', data.message)
+          saveSession(data.session)
+          location.assign('/')
         } else {
           this.setAlert('error', data.message)
         }

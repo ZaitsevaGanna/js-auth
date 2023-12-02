@@ -80,3 +80,13 @@ font-size: 12px;
   border-color:idx.color(red) !important
 }
 }
+
+.link{
+  color:idx.color(main);
+
+  @include idx.click
+}
+
+.link_prefix{
+  color:idx.color(light)
+}

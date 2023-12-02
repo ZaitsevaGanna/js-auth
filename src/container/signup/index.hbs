@@ -33,7 +33,7 @@
 
             <div class="form_item">
                 <div>{{>field-select action='signupForm.change' name='role' label='Роль' placeholder='Оберіть роль'
-                    list=data.role }}</div>
+                    list = data.role }}</div>
                 <span name='role' class="form_error">Помилка</span>
 
             </div>
@@ -50,6 +50,8 @@
 
             <button type="button" class="button button_disabled" onclick="signupForm.submit();">Зареєструватися</button>
             <span class="alert alert_disabled">Увага,помилка!</span>
+
+            <span class="link_prefix">Маєте акаунт?<a href="/login" class="link">Увійти</a></span>
         </div>
     </form>
 </div>

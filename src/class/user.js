@@ -48,22 +48,29 @@ class User {
     )
   }
 
+  static getById(id) {
+    return (
+      this.#list.find((user) => user.id === Number(id)) ||
+      null
+    )
+  }
+
   static getList() {
     return this.#list
   }
 
-  static getRoleById(roleId) {
-    switch (roleId) {
-      case 0:
-        return 'Користувач'
-      case 1:
-        return 'Адміниістратор'
-      case 2:
-        return 'Розробник'
-      default:
-        return 'Хз хто!!!'
-    }
-  }
+  // static getRoleById(roleId) {
+  //   switch (roleId) {
+  //     case 0:
+  //       return 'Користувач'
+  //     case 1:
+  //       return 'Адміниістратор'
+  //     case 2:
+  //       return 'Розробник'
+  //     default:
+  //       return 'Хз хто!!!'
+  //   }
+  // }
 }
 
 module.exports = { User }

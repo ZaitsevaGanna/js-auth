@@ -10,7 +10,7 @@ const { Session } = require('../class/session')
 User.create({
   email: 'test@mail.com',
   password: 123,
-  role: 1,
+  role: 0,
 })
 
 // ================================================================
@@ -146,7 +146,7 @@ router.post('/recovery', function (req, res) {
     }
     Confirm.create(email)
     return res.status(200).json({
-      message: 'Код для выдновлення паролю выдправлено',
+      message: 'Код для відновлення паролю відправлено',
     })
   } catch (err) {
     return res.status(400).json({ message: err.message })

@@ -90,3 +90,16 @@ font-size: 12px;
 .link_prefix{
   color:idx.color(light)
 }
+
+.skeleton {
+  animation:skeleton-animation 1s infinite alternate
+}
+
+@keyframes skeleton-animation {
+  from{
+    background-color: rgba($color: #000000, $alpha: 0.05);
+  }
+  to{
+    background-color: rgba($color: #000000, $alpha: 0.15)
+  }
+}
